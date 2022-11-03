@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Proyecto Final - Problema Creativo</title>
+
+	<link rel="shortcut icon" href="http://www.upsin.edu.mx/assets/img/logo_oficial.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" href="css/bootstrap.min.css" as="style">
+	<link rel="preload" href="js/bootstrap.min.js" as="script">
+	<link rel="preload" href="js/main.js" as="script">
+
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container-fluid">
+			<span class="navbar-brand mb-0 h1">Validador de numeros</span>
+		</div>
+	</nav>
+
+	<div class="container my-5 border border-1 rounded">
+		<form class="my-3">
+			<div class="mb-3">
+				<label for="numero" class="form-label">Numero</label>
+				<input type="text" class="form-control" id="numero" placeholder="Introduce un numero">
+				<div class="form-text">Presione el boton de validar para continuar.</div>
+			</div>
+			<button type="submit" class="btn btn-success" id="validar">Validar</button>
+		</form>
+
+		<div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="resultadoModalLabel">Resultado</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p class="my-1"><b><span id="resultado"></span></b></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="accordion accordion-flush my-5" id="accordionFlushExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header border border-1" id="flush-headingOne">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+						Lógica del programa
+					</button>
+				</h2>
+				<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+						<ol>
+							<li>Obtiene la palabra introducida por el usuario</li>
+							<li>Se convierte en un array con un carácter en cada índice</li>
+							<li>Se obtiene el código ascii de cada carácter</li>
+							<li>El código ascii se convierte en binario</li>
+							<li>Se genera una tabla de transición a partir de un automata que valide numeros</li>
+							<div class="row">
+								<div class="col-6 g-2"><img src="img/automata.png" alt="Imagen de automata"
+										class="w-100"></div>
+								<div class="col-6"><img src="img/tablaTransicion.png" alt="Imagen tabla transición"
+										class="w-100">
+								</div>
+							</div>
+							<li>Se recorre cada bit de cada binario para validar la palabra</li>
+							<li>Si algún caracter no es valido va a salir una alerta y si no saldrá una alerta diciendo
+								que es correcto</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header border border-1" id="flush-headingTwo">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+						Integrantes
+					</button>
+				</h2>
+				<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+						<ul>
+							<li class="my-1">Lizarraga Rojas Alejandro Ivan</li>
+							<li class="my-1">Lopez Robles Jesus Daniel</li>
+							<li class="my-1">Sanchez Lizarraga Guillermo Manuel</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
